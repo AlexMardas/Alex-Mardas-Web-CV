@@ -2,13 +2,13 @@ const locations = [
   {place:'United States',country:'USA',lat:39.8283,lng:-98.5795,projects:[['Infuse','https://infuse.com/'],['System X','https://systemx.com/'],['New Bible','https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android']]},
   {place:'Malta',country:'Malta',lat:35.8997,lng:14.5147,projects:[['EvenBet Gaming','https://evenbeter.com/']]},
   {place:'Cyprus',country:'Cyprus',lat:35.1264,lng:33.4299,projects:[['PIN-UP Global Learning Platform','https://pin-up.global/2025/08/25/pin-up-global-transforms-into-the-redcore-business-group/']]},
-  {place:'Vladivostok',country:'Russia',lat:43.1155,lng:131.8855,projects:[['Ot-Oil','https://atollis.com/en/ruabout-company/']]},
+  {place:'Vladivostok',country:'Russia',lat:43.3,lng:131.8,projects:[['Ot-Oil','https://atollis.com/en/ruabout-company/']]},
   {place:'Czech Republic',country:'Czech Republic',lat:49.8175,lng:15.473,projects:[['NOSEDAT','https://www.nosedat.com/technologie/'],['ManualsLib','https://www.manualslib.com/'],['PicTrick + Photo Ideas','https://play.google.com/store/apps/details?id=org.chlabs.pictrick&hl=ru&gl=US']]},
   {place:'Zürich',country:'Switzerland',lat:47.3769,lng:8.5417,projects:[['3D Systems','https://www.3dsystems.com/']]},
-  {place:'France',country:'France',lat:46.2276,lng:2.2137,projects:[['Laboratoires Réunis','https://drivein.labo.lu/']]},
-  {place:'Israel',country:'Israel',lat:31.0461,lng:34.8516,projects:[['High-Q','https://www.high-q.co.il/']]},
+  {place:'Paris',country:'France',lat:48.8566,lng:2.3522,projects:[['Laboratoires Réunis','https://drivein.labo.lu/']]},
+  {place:'Jerusalem',country:'Israel',lat:31.7683,lng:35.2137,projects:[['High-Q','https://www.high-q.co.il/']]},
   {place:'Torino',country:'Italy',lat:45.0703,lng:7.6869,projects:[['KnowledgeShare','https://www.knowledge-share.eu/en']]},
-  {place:'United Arab Emirates',country:'UAE',lat:23.4241,lng:53.8478,projects:[['MedIX','https://medixeq.net/']]},
+  {place:'Al Ain',country:'UAE',lat:24.1302,lng:55.8023,projects:[['MedIX','https://medixeq.net/']]},
   {place:'Canada',country:'Canada',lat:56.1304,lng:-106.3468,projects:[['Coinchange','https://www.coinchange.io/']]},
   {place:'Worms',country:'Germany',lat:49.6341,lng:8.3507,projects:[['FinanzGeek / weclapp','https://www.weclapp.com/en/']]},
   {place:'Washington, D.C.',country:'USA',lat:38.9072,lng:-77.0369,projects:[['CIBT Visas','https://cibtvisas.com/']]},
@@ -57,4 +57,5 @@ document.addEventListener('click',event=>{
   document.querySelectorAll('.map-point').forEach(node=>node.classList.remove('is-open'));
   document.querySelectorAll('.map-marker').forEach(node=>node.setAttribute('aria-pressed','false'));
 });
+
 
