@@ -17,10 +17,19 @@ const locations = [
 ];
 const markerLayer=document.getElementById('map-markers');
 const detail=document.getElementById('map-detail');
+
+// The SVG's viewport is wider than its geographic viewBox, so the rendered
+// map has equal internal margins on the left and right. Account for those
+// margins before converting longitude to a percentage position.
+const mapViewBoxRatio=2752.766/1537.631;
+const mapImageRatio=939.74725/476.7276;
+const geographicWidth=(mapViewBoxRatio/mapImageRatio)*100;
+const longitudeOffset=(100-geographicWidth)/2;
+
 locations.forEach(item=>{
   const marker=document.createElement('button');
   marker.className='map-marker';
-  marker.style.left=`${((item.lng+180)/360)*100}%`;
+  marker.style.left=`${longitudeOffset+((item.lng+180)/360)*geographicWidth}%`;
   marker.style.top=`${((90-item.lat)/180)*100}%`;
   marker.setAttribute('aria-label',`${item.place}: ${item.projects.join(', ')}`);
   marker.setAttribute('aria-pressed','false');
@@ -32,3 +41,4 @@ locations.forEach(item=>{
   });
   markerLayer.appendChild(marker);
 });
+
