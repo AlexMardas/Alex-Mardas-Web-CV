@@ -1,27 +1,41 @@
-body{overflow-x:hidden}.geos-page{padding-bottom:70px}.geos-heading{display:flex;justify-content:space-between;align-items:end;gap:50px}.geos-heading>div{max-width:360px;padding-bottom:45px}.geos-heading p{font-family:Georgia,'Times New Roman',serif;font-size:20px;line-height:1.45;color:var(--accent);margin:0 0 16px}.geos-heading>div>span{font-size:8px;letter-spacing:1.5px;color:var(--muted)}.map-shell{width:80%;margin:0 auto;border:1px solid var(--ink);background:#e2ddd4}.project-map{position:relative;width:100%;line-height:0;overflow:visible}.project-map>img{display:block;width:100%;height:auto;filter:grayscale(1) sepia(.12) saturate(.35) contrast(.72) brightness(1.14);opacity:.77}.map-point{position:absolute;z-index:2;width:18px;height:18px;transform:translate(-50%,-50%)}.map-marker{width:18px;height:18px;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer}.map-marker span{display:block;width:8px;height:8px;margin:5px;border-radius:50%;background:#b52f50;border:2px solid #fff;box-shadow:0 0 0 1px #7c1f35,0 2px 6px #3f172566;transition:transform .2s ease}.map-point:hover .map-marker span,.map-point:focus-within .map-marker span,.map-point.is-open .map-marker span{transform:scale(1.38);background:#d51f4c}.map-marker:focus-visible{outline:2px solid var(--ink);outline-offset:4px}.map-hint{display:none;position:absolute;z-index:5;left:50%;bottom:calc(100% + 13px);width:220px;transform:translateX(-50%);padding:14px 16px;background:var(--paper);border:1px solid var(--ink);box-shadow:0 10px 24px #24181a30;line-height:1.35;text-align:left}.map-hint::after{content:'';position:absolute;left:50%;bottom:-7px;width:12px;height:12px;transform:translateX(-50%) rotate(45deg);background:var(--paper);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}.map-point:hover .map-hint,.map-point:focus-within .map-hint,.map-point.is-open .map-hint{display:block}.map-hint strong{display:block;margin-bottom:7px;font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:400;color:var(--ink)}.map-hint a{display:block;padding:6px 0;border-top:1px solid var(--line);font-family:Arial,sans-serif;font-size:11px;line-height:1.3;letter-spacing:.35px;color:var(--accent);text-decoration:none}.map-hint a:hover{text-decoration:underline}.map-fallback{font-family:Georgia,serif}@media(max-width:800px){.geos-heading{display:block}.geos-heading>div{padding-bottom:28px}.map-shell{width:100%}.map-marker,.map-point{width:22px;height:22px}.map-marker span{width:8px;height:8px;margin:7px}.map-hint{width:190px}}@media(max-width:420px){.geos-heading p{font-size:18px}.project-map{min-height:300px;overflow:hidden}.project-map>img{width:auto;height:300px;max-width:none;position:relative;left:50%;transform:translateX(-50%)}}
-
-/* Mobile layout */
+body{overflow-x:hidden}
+.geos-page{padding-bottom:70px}
+.geos-heading{display:flex;justify-content:space-between;align-items:end;gap:50px}
+.geos-heading>div{max-width:360px;padding-bottom:45px}
+.geos-heading p{font-family:Georgia,'Times New Roman',serif;font-size:20px;line-height:1.45;color:var(--accent);margin:0 0 16px}
+.geos-heading>div>span{font-size:8px;letter-spacing:1.5px;color:var(--muted)}
+.map-shell{width:80%;margin:0 auto;border:1px solid var(--ink);background:#e2ddd4}
+.project-map{position:relative;width:100%;line-height:0;overflow:visible}
+.base-map{display:block;width:100%;height:auto;filter:grayscale(1) sepia(.12) saturate(.35) contrast(.72) brightness(1.14);opacity:.77}
+.country-overlay{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:fill;pointer-events:none}
+.country-interactions{position:absolute;inset:0}
+.country-hit{position:absolute;z-index:2;transform:translate(-50%,-50%);min-width:14px;min-height:14px;padding:0;border:0;background:transparent;cursor:pointer}
+.country-hit:focus-visible{outline:2px solid #234b2c;outline-offset:2px}
+.country-count{display:flex;align-items:center;justify-content:center;width:22px;height:22px;margin:auto;border-radius:50%;background:#173f27;color:#fff;font:700 11px/1 Arial,sans-serif;box-shadow:0 1px 5px #162b1a66}
+.country-hit:hover .country-count,.country-hit:focus-visible .country-count{transform:scale(1.12)}
+.country-hint{position:absolute;z-index:20;width:230px;transform:translate(-50%,calc(-100% - 14px));padding:14px 16px;background:var(--paper);border:1px solid var(--ink);box-shadow:0 10px 24px #24181a30;line-height:1.35;text-align:left}
+.country-hint[hidden]{display:none}
+.country-hint.hint-below{transform:translate(-50%,18px)}
+.country-hint strong{display:block;font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:400;color:var(--ink)}
+.hint-count{display:block;margin:3px 0 8px;font:8px/1.4 Arial,sans-serif;letter-spacing:1.2px;text-transform:uppercase;color:#51705a}
+.country-hint a{display:block;padding:6px 0;border-top:1px solid var(--line);font-family:Arial,sans-serif;font-size:11px;line-height:1.3;letter-spacing:.35px;color:var(--accent);text-decoration:none}
+.country-hint a:hover{text-decoration:underline}
+.map-fallback{font-family:Georgia,serif}
+@media(max-width:800px){
+  .geos-heading{display:block}
+  .geos-heading>div{padding-bottom:28px}
+  .map-shell{width:100%}
+}
 @media(max-width:640px){
   .geos-page{padding-bottom:50px}
-  .geos-heading{display:block}
   .geos-heading>div{max-width:none;padding-bottom:24px}
   .geos-heading p{font-size:18px;line-height:1.4;margin-bottom:11px}
   .map-shell{width:calc(100% + 32px);margin-left:-16px;border-left:0;border-right:0}
-  .project-map{min-height:0;overflow:visible}
-  .project-map>img{width:100%;height:auto;max-width:100%;position:static;transform:none}
-  .map-point{width:28px;height:28px}
-  .map-marker{width:28px;height:28px}
-  .map-marker span{width:8px;height:8px;margin:10px}
-  .map-point:hover,.map-point:focus-within,.map-point.is-open{z-index:20}
-  .map-hint{width:min(210px,calc(100vw - 34px));padding:12px 14px}
-  .map-hint strong{font-size:15px}
-  .map-hint a{font-size:10px}
+  .country-hit{min-width:24px;min-height:24px}
+  .country-count{width:18px;height:18px;font-size:9px}
+  .country-hint{position:fixed;z-index:100;left:16px!important;right:16px;bottom:16px;top:auto!important;width:auto;transform:none!important}
 }
 @media(max-width:360px){
   .map-shell{width:calc(100% + 26px);margin-left:-13px}
 }
-
-@media(max-width:640px){.map-point{transform:none;margin:-14px 0 0 -14px}.map-hint{position:fixed;z-index:100;left:16px;right:16px;bottom:16px;top:auto;width:auto;transform:none}.map-hint::after{display:none}}
-
-
 
