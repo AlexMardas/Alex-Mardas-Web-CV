@@ -25,7 +25,7 @@ body{overflow-x:hidden}
 .languages{display:grid;grid-template-columns:.8fr 1.6fr;gap:55px;margin-top:54px;padding-top:27px;border-top:3px double var(--ink)}
 .languages>div>span{display:block;margin-bottom:7px;font-size:8px;letter-spacing:1.7px;color:var(--muted)}
 .languages h2{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:38px;font-weight:400;line-height:1.05;letter-spacing:-1px}.languages h2 span{color:var(--accent)}
-.languages ul{display:grid;gap:7px;width:min(100%,220px);margin:0;padding:0;list-style:none}
+.languages ul{display:grid;grid-template-columns:repeat(5,minmax(105px,1fr));gap:7px;width:100%;margin:0;padding:0;list-style:none}
 .languages li{display:grid;grid-template-columns:1fr auto;align-items:center;min-height:36px;padding:6px 14px;border-radius:999px;box-shadow:0 3px 8px #6f263220}.languages strong{font-family:Georgia,'Times New Roman',serif;font-size:13px;font-weight:400}.languages li span{font-size:7px;letter-spacing:1px;text-transform:uppercase}.languages .level-native{background:linear-gradient(110deg,#742136,#98364a 48%,#b94d62);color:#fff}.languages .level-fluent{background:linear-gradient(110deg,#8d3044,#b34d62 55%,#d77f90);color:#fff}.languages .level-b1{background:linear-gradient(110deg,#c17887,#ddaab4 58%,#f0dfe3);color:#482c32}.languages .level-a2{background:linear-gradient(110deg,#dfb9c1,#ecd5da 58%,#f8f1f3);color:#55373d}
 @media(max-width:800px){
   .geos-heading{display:block}
@@ -43,7 +43,7 @@ body{overflow-x:hidden}
   .map-hint::after{display:none}
   .map-hint strong{font-size:15px}
   .map-hint a{font-size:10px}
-  .languages{margin-top:38px;padding-top:22px}.languages h2{font-size:32px}.languages li{min-height:34px;padding:6px 13px}
+  .languages{margin-top:38px;padding-top:22px}.languages h2{font-size:32px}.languages ul{display:grid;grid-auto-flow:column;grid-auto-columns:135px;grid-template-columns:none;overflow-x:auto;padding-bottom:9px;scroll-snap-type:x mandatory}.languages li{min-height:34px;padding:6px 13px;scroll-snap-align:start}
 }
 @media(max-width:360px){
   .map-shell{width:calc(100% + 26px);margin-left:-13px}
