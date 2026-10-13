@@ -1,83 +1,61 @@
 const countries = [
-  {name:'United States',code:'US',x:25.1,y:27.8,w:13,h:11,projects:[
+  {place:'United States',country:'USA',x:25.1,y:27.8,projects:[
     ['Infuse','https://infuse.com/'],['System X','https://systemx.com/'],
-    ['New Bible','https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'],
+    ['New Bible — Google Play','https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'],
     ['CIBT Visas','https://cibtvisas.com/'],['Skyly','https://skylyapp.com/']
   ]},
-  {name:'Malta',code:'MT',x:51.9,y:35.3,w:2.5,h:4,projects:[['EvenBet Gaming','https://evenbeter.com/']]},
-  {name:'Cyprus',code:'CY',x:58.4,y:31.5,w:3,h:4,projects:[['PIN-UP Global Learning Platform','https://pin-up.global/2025/08/25/pin-up-global-transforms-into-the-redcore-business-group/']]},
-  {name:'Russia',code:'RU',x:69,y:17.5,w:27,h:12,projects:[['Ot-Oil','https://atollis.com/en/ruabout-company/'],['SODIS','https://www.sodis.ru/']]},
-  {name:'Czech Republic',code:'CZ',x:53.9,y:22.3,w:3.5,h:4,projects:[['NOSEDAT','https://www.nosedat.com/technologie/'],['ManualsLib','https://www.manualslib.com/'],['PicTrick + Photo Ideas','https://play.google.com/store/apps/details?id=org.chlabs.pictrick&hl=ru&gl=US']]},
-  {name:'Switzerland',code:'CH',x:51.6,y:25.3,w:3,h:4,projects:[['3D Systems','https://www.3dsystems.com/']]},
-  {name:'France',code:'FR',x:49.9,y:25.2,w:4.5,h:6,projects:[['Laboratoires Réunis','https://drivein.labo.lu/']]},
-  {name:'Israel',code:'IL',x:58.9,y:32.4,w:2.7,h:5,projects:[['High-Q','https://www.high-q.co.il/']]},
-  {name:'Italy',code:'IT',x:52.1,y:28.2,w:3.5,h:7,projects:[['KnowledgeShare','https://www.knowledge-share.eu/en']]},
-  {name:'United Arab Emirates',code:'AE',x:64.1,y:36.6,w:4,h:5,projects:[['MedIX','https://medixeq.net/']]},
-  {name:'Canada',code:'CA',x:24,y:17.5,w:19,h:12,projects:[['Coinchange','https://www.coinchange.io/']]},
-  {name:'Germany',code:'DE',x:52.2,y:22.4,w:4,h:6,projects:[['FinanzGeek / weclapp','https://www.weclapp.com/en/']]}
+  {place:'Canada',country:'Canada',x:22,y:17.75,projects:[['Coinchange','https://www.coinchange.io/']]},
+  {place:'Malta',country:'Malta',x:50.14,y:31.34,projects:[['EvenBet Gaming','https://evenbeter.com/']]},
+  {place:'Cyprus',country:'Cyprus',x:54.89,y:31.69,projects:[['PIN-UP Global Learning Platform','https://pin-up.global/2025/08/25/pin-up-global-transforms-into-the-redcore-business-group/']]},
+  {place:'Russia',country:'Russia',x:72.93,y:18.31,projects:[['Ot-Oil','https://atollis.com/en/ruabout-company/'],['SODIS','https://www.sodis.ru/']]},
+  {place:'France',country:'France',x:49,y:25.2,projects:[['Laboratoires Réunis','https://drivein.labo.lu/']]},
+  {place:'Bern',country:'Switzerland',x:48.54,y:25.7,projects:[['3D Systems','https://www.3dsystems.com/']]},
+  {place:'Rome',country:'Italy',x:49.64,y:28.24,projects:[['KnowledgeShare','https://www.knowledge-share.eu/en']]},
+  {place:'Berlin',country:'Germany',x:49.11,y:23.59,projects:[['FinanzGeek / weclapp','https://www.weclapp.com/en/']]},
+  {place:'Jerusalem',country:'Israel',x:55.29,y:33.45,projects:[['High-Q','https://www.high-q.co.il/']]},
+  {place:'Al Ain',country:'UAE',x:60.11,y:37.04,projects:[['MedIX','https://medixeq.net/']]},
+  {place:'Prague',country:'Czech Republic',x:50.39,y:24.23,projects:[
+    ['NOSEDAT','https://www.nosedat.com/technologie/'],['ManualsLib','https://www.manualslib.com/'],
+    ['PicTrick + Photo Ideas — Google Play','https://play.google.com/store/apps/details?id=org.chlabs.pictrick&hl=ru&gl=US']
+  ]}
 ];
 
-const layer=document.getElementById('country-interactions');
-const hint=document.getElementById('country-hint');
-let hideTimer;
+const markerLayer=document.getElementById('map-markers');
+countries.forEach((item,index)=>{
+  const point=document.createElement('div');
+  point.className='map-point';
+  point.style.left=`${item.x}%`;
+  point.style.top=`${item.y*2}%`;
 
-function hideHint(){
-  hideTimer=setTimeout(()=>{
-    hint.hidden=true;
-    document.querySelectorAll('.country-hit').forEach(node=>node.setAttribute('aria-expanded','false'));
-  },220);
-}
+  const marker=document.createElement('button');
+  const projectCount=item.projects.length;
+  marker.className=`map-marker${projectCount>1?' map-marker-count':''}`;
+  marker.setAttribute('aria-label',`${item.country}: ${projectCount} ${projectCount===1?'project':'projects'}`);
+  marker.setAttribute('aria-pressed','false');
+  marker.setAttribute('aria-describedby',`hint-${index}`);
+  marker.innerHTML=projectCount>1?`<span aria-hidden="true">${projectCount}</span>`:'<span aria-hidden="true"></span>';
 
-function showHint(country,button){
-  clearTimeout(hideTimer);
-  document.querySelectorAll('.country-hit').forEach(node=>node.setAttribute('aria-expanded','false'));
-  button.setAttribute('aria-expanded','true');
-  hint.innerHTML=`<strong>${country.name}</strong><span class="hint-count">${country.projects.length} ${country.projects.length===1?'project':'projects'}</span>${country.projects.map(([name,url])=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${name} ↗</a>`).join('')}`;
-  hint.style.left=`${country.x}%`;
-  hint.style.top=`${country.y}%`;
-  hint.classList.toggle('hint-below',country.y<30);
-  hint.hidden=false;
-}
+  const hint=document.createElement('div');
+  hint.className='map-hint';
+  hint.id=`hint-${index}`;
+  hint.setAttribute('role','tooltip');
+  hint.innerHTML=`<strong>${item.country}</strong><small>${projectCount} ${projectCount===1?'project':'projects'}</small>${item.projects.map(([name,url])=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${name} ↗</a>`).join('')}`;
 
-countries.forEach(country=>{
-  const button=document.createElement('button');
-  button.className='country-hit';
-  button.style.left=`${country.x}%`;
-  button.style.top=`${country.y}%`;
-  button.style.width=`${country.w}%`;
-  button.style.height=`${country.h}%`;
-  button.setAttribute('aria-label',`${country.name}: ${country.projects.length} ${country.projects.length===1?'project':'projects'}`);
-  button.setAttribute('aria-expanded','false');
-  if(country.projects.length>1){
-    const count=document.createElement('span');
-    count.className='country-count';
-    count.textContent=country.projects.length;
-    count.setAttribute('aria-hidden','true');
-    button.appendChild(count);
-  }
-  button.addEventListener('mouseenter',()=>showHint(country,button));
-  button.addEventListener('mouseleave',hideHint);
-  button.addEventListener('focus',()=>showHint(country,button));
-  button.addEventListener('blur',hideHint);
-  button.addEventListener('click',event=>{
-    event.preventDefault();
-    if(!hint.hidden&&button.getAttribute('aria-expanded')==='true'){
-      hint.hidden=true;
-      button.setAttribute('aria-expanded','false');
-    }else{
-      showHint(country,button);
-    }
+  marker.addEventListener('click',()=>{
+    const willOpen=!point.classList.contains('is-open');
+    document.querySelectorAll('.map-point').forEach(node=>node.classList.remove('is-open'));
+    document.querySelectorAll('.map-marker').forEach(node=>node.setAttribute('aria-pressed','false'));
+    point.classList.toggle('is-open',willOpen);
+    marker.setAttribute('aria-pressed',String(willOpen));
   });
-  layer.appendChild(button);
+
+  point.append(marker,hint);
+  markerLayer.appendChild(point);
 });
 
-hint.addEventListener('mouseenter',()=>clearTimeout(hideTimer));
-hint.addEventListener('mouseleave',hideHint);
-hint.addEventListener('focusin',()=>clearTimeout(hideTimer));
-hint.addEventListener('focusout',hideHint);
 document.addEventListener('click',event=>{
-  if(event.target.closest('.country-hit')||event.target.closest('.country-hint')) return;
-  hint.hidden=true;
-  document.querySelectorAll('.country-hit').forEach(node=>node.setAttribute('aria-expanded','false'));
+  if(event.target.closest('.map-point')) return;
+  document.querySelectorAll('.map-point').forEach(node=>node.classList.remove('is-open'));
+  document.querySelectorAll('.map-marker').forEach(node=>node.setAttribute('aria-pressed','false'));
 });
 
