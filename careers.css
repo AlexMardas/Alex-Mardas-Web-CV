@@ -31,7 +31,7 @@
 .metric-card h3{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:24px;font-weight:400;line-height:1.1}
 .metric-focus{min-height:47px;margin:12px 0 16px;font-family:Georgia,'Times New Roman',serif;font-size:13px;line-height:1.5;color:var(--muted)}
 .metric-chart{margin:0 0 18px;padding:10px;background:#f7f3ef;border:1px solid var(--line)}
-.metric-chart img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.metric-chart img{display:block;width:100%;aspect-ratio:1.35/1;object-fit:contain;mix-blend-mode:multiply}
 .metric-chart figcaption{margin-top:8px;font-size:7px;line-height:1.4;letter-spacing:1.1px;text-transform:uppercase;color:var(--muted)}
 .metric-examples{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px}
 .metric-examples>div{min-height:72px;padding:10px;background:#f0e8e2;border-top:3px solid var(--accent)}
@@ -60,4 +60,7 @@
   .metric-examples>div{min-height:0}
   .metric-card li{font-size:12px}
 }
+
+/* Keep the transition from career history to metrics open and editorial. */
+.career-entry:last-child{border-bottom:0}
 
