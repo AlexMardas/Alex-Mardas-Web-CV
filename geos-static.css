@@ -10,11 +10,11 @@ body{overflow-x:hidden}
 .map-point{position:absolute;z-index:2;width:28px;height:28px;transform:translate(-50%,-50%)}
 .map-point:hover,.map-point:focus-within,.map-point.is-open{z-index:20}
 .map-marker{width:28px;height:28px;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer}
-.map-marker>span{display:block;width:8px;height:8px;margin:10px;border-radius:50%;background:#b52f50;border:2px solid #fff;box-shadow:0 0 0 1px #7c1f35,0 2px 6px #3f172566;transition:transform .2s ease}
+.map-marker>span{display:block;width:8px;height:8px;margin:10px;border-radius:50%;background:#345a78;border:2px solid #fff;box-shadow:0 0 0 1px #1f3b52,0 2px 6px #162a3a66;transition:transform .2s ease}
 .map-marker-count>span{display:flex;align-items:center;justify-content:center;width:22px;height:22px;margin:3px;background:#27653a;border:2px solid #fff;box-shadow:0 0 0 1px #173f27,0 2px 7px #173f2755;color:#fff;font:700 10px/1 Arial,sans-serif}
 .map-point:hover .map-marker>span,.map-point:focus-within .map-marker>span,.map-point.is-open .map-marker>span{transform:scale(1.18)}
 .map-marker:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.map-hint{display:none;position:absolute;z-index:5;left:50%;bottom:calc(100% + 12px);width:230px;transform:translateX(-50%);padding:14px 16px;background:var(--paper);border:1px solid var(--ink);box-shadow:0 10px 24px #24181a30;line-height:1.35;text-align:left}
+.map-hint{display:none;position:absolute;z-index:5;left:50%;bottom:calc(100% + 12px);width:230px;transform:translateX(-50%);padding:14px 16px;background:var(--paper);border:1px solid var(--ink);box-shadow:0 10px 24px #18263430;line-height:1.35;text-align:left}
 .map-hint::after{content:'';position:absolute;left:50%;bottom:-7px;width:12px;height:12px;transform:translateX(-50%) rotate(45deg);background:var(--paper);border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}
 .map-point:hover .map-hint,.map-point:focus-within .map-hint,.map-point.is-open .map-hint{display:block}
 .map-hint strong{display:block;font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:400;color:var(--ink)}
@@ -26,7 +26,7 @@ body{overflow-x:hidden}
 .languages>div>span{display:block;margin-bottom:7px;font-size:8px;letter-spacing:1.7px;color:var(--muted)}
 .languages h2{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:38px;font-weight:400;line-height:1.05;letter-spacing:-1px}.languages h2 span{color:var(--accent)}
 .languages ul{display:grid;grid-template-columns:repeat(5,minmax(105px,1fr));gap:7px;width:100%;margin:0;padding:0;list-style:none}
-.languages li{display:grid;grid-template-columns:1fr auto;align-items:center;min-height:36px;padding:6px 14px;border-radius:999px;box-shadow:0 3px 8px #6f263220}.languages strong{font-family:Georgia,'Times New Roman',serif;font-size:13px;font-weight:400}.languages li span{font-size:7px;letter-spacing:1px;text-transform:uppercase}.languages .level-native{background:linear-gradient(110deg,#742136,#98364a 48%,#b94d62);color:#fff}.languages .level-fluent{background:linear-gradient(110deg,#8d3044,#b34d62 55%,#d77f90);color:#fff}.languages .level-b1{background:linear-gradient(110deg,#c17887,#ddaab4 58%,#f0dfe3);color:#482c32}.languages .level-a2{background:linear-gradient(110deg,#dfb9c1,#ecd5da 58%,#f8f1f3);color:#55373d}
+.languages li{display:grid;grid-template-columns:1fr auto;align-items:center;min-height:36px;padding:6px 14px;border-radius:999px;box-shadow:0 3px 8px #1c2d3d20}.languages strong{font-family:Georgia,'Times New Roman',serif;font-size:13px;font-weight:400}.languages li span{font-size:7px;letter-spacing:1px;text-transform:uppercase}.languages .level-native{background:linear-gradient(110deg,#1e3449,#34536d 48%,#58758d);color:#fff}.languages .level-fluent{background:linear-gradient(110deg,#29445c,#496b87 55%,#8ca1b3);color:#fff}.languages .level-b1{background:linear-gradient(110deg,#8297a9,#b0bec9 58%,#e2e8ed);color:#2e3b47}.languages .level-a2{background:linear-gradient(110deg,#b8c5cf,#d7e0e6 58%,#f2f5f7);color:#354553}
 @media(max-width:800px){
   .geos-heading{display:block}
   .geos-heading>div{padding-bottom:28px}
