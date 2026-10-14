@@ -13,54 +13,34 @@
 <article class="career-entry"><div class="career-index">05</div><div class="career-company"><h2>EPAM Systems</h2><p class="career-role">Software Testing Engineer · Automated Testing</p></div><div class="career-details"><div><span>PERIOD</span><strong>April 2008 — September 2008</strong></div><div><span>COMPANY DOMAIN</span><strong>Software development outsourcing</strong></div></div></article>
 </section>
 <section class="metrics-section" aria-labelledby="metrics-title">
-  <div class="metrics-heading"><div><span>MEASUREMENT FRAMEWORK</span><h2 id="metrics-title">Metrics I work with<span>.</span></h2></div><p>I connect delivery health, product behaviour and operating performance to make priorities visible and decisions measurable.</p></div>
-  <div class="metrics-grid">
-    <article class="metric-card metric-project">
-      <div class="metric-card-head"><span>01</span><h3>Project management</h3></div>
-      <p class="metric-focus">Delivery predictability, quality and control</p>
-      <figure class="metric-chart"><img src="project-lead-time.png" alt="Lead Time distribution by project shown as a doughnut chart"><figcaption>Lead Time — Distribution by Project</figcaption></figure>
-      <div class="metric-examples"><div><small>EXAMPLE</small><strong>Committed vs Done</strong></div><div><small>EXAMPLE</small><strong>Cycle Time + Lead Time</strong></div></div>
-      <ul>
-        <li><strong>Schedule &amp; cost:</strong> Schedule Variance, Cost Variance, CPI / SPI, Budget at Completion (BAC), Earned Value Management (EVM)</li>
-        <li><strong>Flow:</strong> Cycle Time, Lead Time, WIP, Team Velocity</li>
-        <li><strong>Predictability:</strong> Planned vs Delivered, Done vs Released</li>
-        <li><strong>Quality:</strong> DRE, Rework Ratio, Test Coverage, Escaped Defects</li>
-        <li><strong>Change:</strong> Requirements Stability Index</li>
-        <li><strong>People:</strong> Stakeholder Satisfaction</li>
-      </ul>
-    </article>
-    <article class="metric-card metric-product">
-      <div class="metric-card-head"><span>02</span><h3>Product &amp; iGaming</h3></div>
-      <p class="metric-focus">Acquisition, engagement and product economics</p>
-      <figure class="metric-chart"><img src="product-igaming-trends.png" alt="Created versus resolved product and iGaming activity trend"><figcaption>Created vs Resolved — Product &amp; iGaming Trend</figcaption></figure>
-      <div class="metric-examples"><div><small>FUNNEL</small><strong>Traffic → Registration → FTD</strong></div><div><small>ECONOMICS</small><strong>LTV / CAC + ROI</strong></div></div>
-      <ul>
-        <li><strong>Acquisition:</strong> Traffic, Registration Conversion, FTD</li>
-        <li><strong>iGaming:</strong> Game Activity, GGR, NGR</li>
-        <li><strong>Value:</strong> LTV, CAC, LTV / CAC Ratio, ARPU, ROI</li>
-        <li><strong>Retention:</strong> Churn Rate, Retention Rate, Customer Lifetime</li>
-        <li><strong>Revenue:</strong> AOV, Purchase Frequency, Gross Margin</li>
-        <li><strong>Experience:</strong> CSAT / NPS, Adoption, UX and Performance</li>
-      </ul>
-    </article>
-    <article class="metric-card metric-operations">
-      <div class="metric-card-head"><span>03</span><h3>Operations</h3></div>
-      <p class="metric-focus">Workload health, bottlenecks and service flow</p>
-      <figure class="metric-chart"><img src="operations-bottlenecks.png" alt="Bottlenecks and stuck tasks by assignee shown as a doughnut chart"><figcaption>Bottlenecks — Stuck Tasks by Assignee (&gt;14 Days)</figcaption></figure>
-      <div class="metric-examples"><div><small>BOTTLENECKS</small><strong>Stuck tasks &gt;14 days</strong></div><div><small>FLOW</small><strong>Created vs Resolved</strong></div></div>
-      <ul>
-        <li><strong>Ageing:</strong> Stuck Tasks by Assignee and Work Item Age</li>
-        <li><strong>Idle work:</strong> Stalled Tasks and Idle Time by Assignee</li>
-        <li><strong>Throughput:</strong> Created vs Resolved Trend</li>
-        <li><strong>Distribution:</strong> Lead Time by Project</li>
-        <li><strong>Capacity:</strong> Backlog Health, WIP and Team Load</li>
-        <li><strong>Service:</strong> SLA Attainment and Resolution Time</li>
-      </ul>
-    </article>
+  <div class="metrics-heading"><div><span>PRODUCT OWNERSHIP</span><h2 id="metrics-title">Prioritisation triangle<span>.</span></h2></div><p>I balance customer and business value against delivery risk and implementation effort to keep the backlog focused on outcomes.</p></div>
+  <div class="priority-framework">
+    <figure class="priority-triangle" aria-labelledby="priority-caption">
+      <svg viewBox="0 0 680 540" role="img" aria-labelledby="triangle-title triangle-desc">
+        <title id="triangle-title">Product Owner prioritisation triangle</title>
+        <desc id="triangle-desc">Priority is determined by balancing value, risk and effort.</desc>
+        <polygon class="triangle-fill" points="340,45 70,475 610,475"></polygon>
+        <polygon class="triangle-line" points="340,45 70,475 610,475"></polygon>
+        <line x1="340" y1="45" x2="340" y2="475"></line>
+        <line x1="70" y1="475" x2="475" y2="260"></line>
+        <line x1="610" y1="475" x2="205" y2="260"></line>
+        <circle cx="340" cy="322" r="79"></circle>
+        <text class="triangle-label triangle-value" x="340" y="105" text-anchor="middle">VALUE</text>
+        <text class="triangle-label" x="138" y="445" text-anchor="middle">RISK</text>
+        <text class="triangle-label" x="542" y="445" text-anchor="middle">EFFORT</text>
+        <text class="triangle-core" x="340" y="315" text-anchor="middle">PRIORITY</text>
+        <text class="triangle-core-sub" x="340" y="340" text-anchor="middle">WHAT TO BUILD NEXT</text>
+      </svg>
+      <figcaption id="priority-caption">A decision is strong when value is explicit, risk is understood and effort is realistic.</figcaption>
+    </figure>
+    <div class="priority-principles">
+      <article><span>01</span><div><h3>Value</h3><p>Customer impact, business outcomes and strategic alignment.</p></div></article>
+      <article><span>02</span><div><h3>Risk</h3><p>Uncertainty, dependencies, compliance and the cost of delay.</p></div></article>
+      <article><span>03</span><div><h3>Effort</h3><p>Delivery complexity, team capacity and time to measurable impact.</p></div></article>
+    </div>
   </div>
 </section>
 <div class="career-note"><span>THE THROUGH LINE</span><p>I’m building clarity across business, product and technology — from discovery and requirements to release and operational improvement.</p></div>
-<section class="skills-section" aria-labelledby="skills-title"><div class="skills-heading"><h2 id="skills-title">Skills<span>.</span></h2></div><ul class="skills-list"><li>People Management</li><li>Product Backlog Management</li><li>Cross-functional Development</li><li>Full-cycle Delivery</li><li>Product Strategy &amp; Roadmapping</li><li>Stakeholder Management</li><li>Agile &amp; Scrum Leadership</li><li>Product Discovery &amp; Requirements</li><li>Metrics &amp; Data-driven Decisions</li><li>Low-code Product Development</li><li>Risk Management</li><li>Prototyping &amp; Design</li></ul></section></main>
+<section class="skills-section" aria-labelledby="skills-title"><div class="skills-heading"><h2 id="skills-title">Skills<span>.</span></h2></div><ul class="skills-list"><li>Business Analysis</li><li>Systems Analysis</li><li>Product Ownership</li><li>Functional Architecture</li><li>Requirements Engineering</li><li>Product Backlog Management</li><li>Integration Analysis</li><li>APIs &amp; Microservices</li><li>DICOM, HL7 &amp; FHIR</li><li>Legacy System Migration</li><li>Stakeholder Management</li><li>Presales &amp; Solution Consulting</li></ul></section></main>
 <footer><div class="footer-title">Let's connect<span>↗</span></div><div class="footer-grid"><div><span class="footer-label">CONTACT</span><a href="tel:+48881537867">+48 881 537 867</a></div><div><span class="footer-label">EMAIL</span><a href="mailto:aliaksei.mardas@gmail.com">aliaksei.mardas@gmail.com</a></div><div><span class="footer-label">LINKEDIN</span><a href="https://www.linkedin.com/in/alexmardas/" target="_blank" rel="noopener noreferrer">Alex Mardas ↗</a></div><div><span class="footer-label">BASED IN</span><span>Poland</span></div></div><div class="colophon"><span>© 2026 Alex Mardas</span><span>PRODUCT · PEOPLE · PURPOSE</span></div></footer>
 </div></body></html>
-
