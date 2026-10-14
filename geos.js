@@ -1,22 +1,24 @@
 const countries = [
   {place:'United States',country:'USA',x:25.1,y:27.8,projects:[
-    ['Infuse','https://infuse.com/'],['System X','https://systemx.com/'],
-    ['New Bible — Google Play','https://play.google.com/store/apps/details?id=com.sirma.mobile.bible.android'],
-    ['CIBT Visas','https://cibtvisas.com/'],['Skyly','https://skylyapp.com/']
+    ['NewVue','https://www.newvue.ai/radiologist-cockpit'],
+    ['CoheroHealth','https://www.contractpharma.com/breaking-news/aptargroup-acquires-assets-of-cohero-health/'],
+    ['Alt-Bionics','https://www.altbionics.com/'],
+    ['BreatheSmart Inhaler','https://aptar.com/en-us/products/pharmaceutical-herotracker-sense-a-smart-healthcare-solution-for-digital-respiratory-medicine'],
+    ['LISTEN for Everyone','https://compassionai.com/'],['Phenom'],['Heavys'],['Counterpunch'],
+    ['Blueprint Leads','https://www.blueprintleads.com/'],['Morning Star','https://www.morningstarco.com/']
   ]},
-  {place:'Canada',country:'Canada',x:22,y:17.75,projects:[['Coinchange','https://www.coinchange.io/']]},
-  {place:'Malta',country:'Malta',x:50.14,y:31.34,projects:[['EvenBet Gaming','https://evenbeter.com/']]},
-  {place:'Cyprus',country:'Cyprus',x:54.89,y:31.69,projects:[['PIN-UP Global Learning Platform','https://pin-up.global/2025/08/25/pin-up-global-transforms-into-the-redcore-business-group/']]},
-  {place:'Russia',country:'Russia',x:72.93,y:18.31,projects:[['Ot-Oil','https://atollis.com/en/ruabout-company/'],['SODIS','https://www.sodis.ru/']]},
-  {place:'France',country:'France',x:49,y:25.2,projects:[['Laboratoires Réunis','https://drivein.labo.lu/']]},
-  {place:'Bern',country:'Switzerland',x:48.54,y:25.7,projects:[['3D Systems','https://www.3dsystems.com/']]},
-  {place:'Rome',country:'Italy',x:49.64,y:28.24,projects:[['KnowledgeShare','https://www.knowledge-share.eu/en']]},
-  {place:'Berlin',country:'Germany',x:49.11,y:23.59,projects:[['FinanzGeek / weclapp','https://www.weclapp.com/en/']]},
-  {place:'Jerusalem',country:'Israel',x:55.29,y:33.45,projects:[['High-Q','https://www.high-q.co.il/']]},
-  {place:'Al Ain',country:'UAE',x:60.11,y:37.04,projects:[['MedIX','https://medixeq.net/']]},
-  {place:'Prague',country:'Czech Republic',x:50.39,y:24.23,projects:[
-    ['NOSEDAT','https://www.nosedat.com/technologie/'],['ManualsLib','https://www.manualslib.com/'],
-    ['PicTrick + Photo Ideas — Google Play','https://play.google.com/store/apps/details?id=org.chlabs.pictrick&hl=ru&gl=US']
+  {place:'France',country:'France',x:49,y:25.2,projects:[
+    ['CoheroHealth','https://www.contractpharma.com/breaking-news/aptargroup-acquires-assets-of-cohero-health/'],
+    ['AdhereIT','https://aptar.com/en-us/products/pharmaceutical-adhereit']
+  ]},
+  {place:'United Kingdom',country:'UK',x:47.6,y:21.8,projects:[
+    ['IAG Dynamika','https://www.ia-grp.com/dynamika/'],
+    ['DUSKER Sleepbar','https://www.amazon.co.uk/Dusker-Sleepbar-v2-0-Smart-App-Mist-Grey/dp/B0CQKG36PY']
+  ]},
+  {place:'Switzerland',country:'Switzerland',x:49.2,y:26.2,projects:[['UBS Bank']]},
+  {place:'Belarus',country:'Belarus',x:54.1,y:22.4,projects:[['Logistory'],['AutoGIS']]},
+  {place:'Poland',country:'Poland',x:51.5,y:23.2,projects:[
+    ['Ellipta FindAir ONE','https://findair.pl/findair-one-add-ons-pl/findair-one-ellipta-pl.html']
   ]}
 ];
 
@@ -39,7 +41,7 @@ countries.forEach((item,index)=>{
   hint.className='map-hint';
   hint.id=`hint-${index}`;
   hint.setAttribute('role','tooltip');
-  hint.innerHTML=`<strong>${item.country}</strong><small>${projectCount} ${projectCount===1?'project':'projects'}</small>${item.projects.map(([name,url])=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${name} ↗</a>`).join('')}`;
+  hint.innerHTML=`<strong>${item.country}</strong><small>${projectCount} ${projectCount===1?'project':'projects'}</small>${item.projects.map(([name,url])=>url?`<a href="${url}" target="_blank" rel="noopener noreferrer">${name} ↗</a>`:`<span class="map-project">${name}</span>`).join('')}`;
 
   marker.addEventListener('click',()=>{
     const willOpen=!point.classList.contains('is-open');
@@ -58,4 +60,3 @@ document.addEventListener('click',event=>{
   document.querySelectorAll('.map-point').forEach(node=>node.classList.remove('is-open'));
   document.querySelectorAll('.map-marker').forEach(node=>node.setAttribute('aria-pressed','false'));
 });
-

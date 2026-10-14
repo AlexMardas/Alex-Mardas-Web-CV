@@ -56,8 +56,13 @@ body{background:#e7e1d8;color:var(--ink)}
 .project-card>a:hover,.project-links a:hover{color:var(--accent)}
 .project-card .project-role{margin-bottom:12px}
 .project-badges{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 18px}
-.project-badges>span{display:inline-flex;align-items:center;gap:4px;min-height:23px;padding:4px 9px;border:1px solid #9eb0bf;border-radius:999px;background:#e9eef2;color:#29445c;font-size:8px;font-weight:700;line-height:1;letter-spacing:.65px;text-transform:uppercase;white-space:nowrap}
-.project-badges .badge-bluetooth{background:#dfeaf2;border-color:#7595ad}
+.project-badges>span{display:inline-flex;align-items:center;gap:4px;min-height:23px;padding:4px 9px;border:1px solid #c8d1d7;border-radius:999px;background:#e9eef1;color:#344653;box-shadow:0 2px 6px #2f4a640d;font-size:8px;font-weight:700;line-height:1;letter-spacing:.65px;text-transform:uppercase;white-space:nowrap}
+.project-badges>span:nth-child(6n+2){border-color:#cbd3ca;background:#e9eee8;color:#425047}
+.project-badges>span:nth-child(6n+3){border-color:#d3cec4;background:#f0ede7;color:#514b45}
+.project-badges>span:nth-child(6n+4){border-color:#d2cad5;background:#eee9ef;color:#504653}
+.project-badges>span:nth-child(6n+5){border-color:#c8d4d3;background:#e7eeee;color:#3f5050}
+.project-badges>span:nth-child(6n){border-color:#d7d0c7;background:#f1ede8;color:#554c43}
+.project-badges .badge-bluetooth{border-color:#c8cedb;background:#e8ebf1;color:#3f4a60}
 .badge-bluetooth svg{width:12px;height:12px;fill:currentColor;flex:0 0 auto}
 footer{border-top-color:var(--ink)}
 .footer-grid a:hover{color:var(--accent)}
