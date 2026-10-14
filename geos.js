@@ -5,21 +5,20 @@ const countries = [
     ['Alt-Bionics','https://www.altbionics.com/'],
     ['BreatheSmart Inhaler','https://aptar.com/en-us/products/pharmaceutical-herotracker-sense-a-smart-healthcare-solution-for-digital-respiratory-medicine'],
     ['LISTEN for Everyone','https://compassionai.com/'],['Phenom'],['Heavys'],['Counterpunch'],
-    ['Blueprint Leads','https://www.blueprintleads.com/'],['Morning Star','https://www.morningstarco.com/']
+    ['Blueprint Leads','https://www.blueprintleads.com/'],['Morning Star','https://www.morningstarco.com/'],
+    ['Ellipta FindAir ONE','https://findair.pl/findair-one-add-ons-pl/findair-one-ellipta-pl.html']
   ]},
   {place:'France',country:'France',x:49,y:25.2,projects:[
     ['CoheroHealth','https://www.contractpharma.com/breaking-news/aptargroup-acquires-assets-of-cohero-health/'],
-    ['AdhereIT','https://aptar.com/en-us/products/pharmaceutical-adhereit']
+    ['AdhereIT','https://aptar.com/en-us/products/pharmaceutical-adhereit'],
+    ['Ellipta FindAir ONE','https://findair.pl/findair-one-add-ons-pl/findair-one-ellipta-pl.html']
   ]},
   {place:'United Kingdom',country:'UK',x:47.6,y:21.8,projects:[
     ['IAG Dynamika','https://www.ia-grp.com/dynamika/'],
     ['DUSKER Sleepbar','https://www.amazon.co.uk/Dusker-Sleepbar-v2-0-Smart-App-Mist-Grey/dp/B0CQKG36PY']
   ]},
   {place:'Switzerland',country:'Switzerland',x:49.2,y:26.2,projects:[['UBS Bank']]},
-  {place:'Belarus',country:'Belarus',x:54.1,y:22.4,projects:[['Logistory'],['AutoGIS']]},
-  {place:'Poland',country:'Poland',x:51.5,y:23.2,projects:[
-    ['Ellipta FindAir ONE','https://findair.pl/findair-one-add-ons-pl/findair-one-ellipta-pl.html']
-  ]}
+  {place:'Belarus',country:'Belarus',x:54.1,y:22.4,projects:[['Logistory'],['AutoGIS']]}
 ];
 
 const markerLayer=document.getElementById('map-markers');
