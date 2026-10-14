@@ -7,6 +7,9 @@
 .project-label{display:grid;grid-template-columns:35px minmax(0,1fr);gap:12px;align-items:baseline}
 .project-label>span{font-family:Georgia,'Times New Roman',serif;font-size:12px;color:var(--accent)}
 .project-label h2{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:23px;font-weight:400;line-height:1.2;letter-spacing:-.35px}
+.tech-groups{display:grid;gap:14px;min-width:0}
+.tech-group{display:grid;grid-template-columns:145px minmax(0,1fr);gap:12px;align-items:start}
+.tech-group h3{margin:6px 0 0;font-size:8px;font-weight:700;line-height:1.35;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
 .tech-labels{display:flex;flex-wrap:wrap;gap:7px;min-width:0}
 .tech-labels span{display:inline-flex;align-items:center;min-height:27px;padding:5px 10px;border:1px solid #c8d1d7;border-radius:999px;background:#e9eef1;color:#344653;box-shadow:0 2px 6px #2f4a640d;font-size:8px;font-weight:700;line-height:1;letter-spacing:.55px;text-transform:uppercase;white-space:nowrap}
 .tech-labels span:nth-child(5n+2){border-color:#cbd3ca;background:#e9eee8;color:#425047}
@@ -16,3 +19,4 @@
 @media(max-width:800px){.tech-intro{grid-template-columns:1fr;gap:15px}.tech-intro span{text-align:left}.tech-matrix article{grid-template-columns:1fr;gap:13px}.project-label{grid-template-columns:29px 1fr}}
 @media(max-width:640px){.tech-page{padding-bottom:52px}.tech-intro p{font-size:22px}.tech-matrix{margin-top:28px}.tech-matrix article{min-width:0;padding:19px 0}.project-label h2{font-size:21px}.tech-labels{gap:6px}.tech-labels span{max-width:100%;padding:5px 8px;font-size:7px;line-height:1.2;text-align:center;white-space:normal}}
 @media(max-width:640px){.tech-page,.tech-matrix,.tech-matrix article,.project-label,.tech-labels{width:100%;min-width:0;max-width:100%}.tech-labels span{overflow-wrap:anywhere}}
+@media(max-width:640px){.tech-group{grid-template-columns:1fr;gap:6px}.tech-group h3{margin-top:2px}.tech-entry-expanded{gap:17px!important}}
