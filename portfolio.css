@@ -54,8 +54,13 @@ body{background:#e7e1d8;color:var(--ink)}
 .project-number,.project-card:nth-child(even) .project-number,.featured .project-number,.featured:nth-child(even) .project-number{top:26px;right:27px;color:var(--accent)}
 .project-card>a,.project-links a{color:var(--ink);border-bottom-color:var(--accent)}
 .project-card>a:hover,.project-links a:hover{color:var(--accent)}
+.project-card .project-role{margin-bottom:12px}
+.project-badges{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 18px}
+.project-badges>span{display:inline-flex;align-items:center;gap:4px;min-height:23px;padding:4px 9px;border:1px solid #9eb0bf;border-radius:999px;background:#e9eef2;color:#29445c;font-size:8px;font-weight:700;line-height:1;letter-spacing:.65px;text-transform:uppercase;white-space:nowrap}
+.project-badges .badge-bluetooth{background:#dfeaf2;border-color:#7595ad}
+.badge-bluetooth svg{width:12px;height:12px;fill:currentColor;flex:0 0 auto}
 footer{border-top-color:var(--ink)}
 .footer-grid a:hover{color:var(--accent)}
 @media(max-width:800px){.project-grid{gap:18px}.project-card,.project-card:nth-child(even),.project-card.aligned,.project-card.aligned:nth-child(even),.featured,.featured:nth-child(even){padding:27px 24px;min-height:0}.project-number,.project-card:nth-child(even) .project-number,.featured .project-number,.featured:nth-child(even) .project-number{top:23px;right:23px}}
-@media(max-width:640px){body{background:var(--paper)}.project-section{padding-top:43px}.project-grid{gap:15px}.project-card,.project-card:nth-child(even),.project-card.aligned,.project-card.aligned:nth-child(even),.featured,.featured:nth-child(even){padding:24px 20px 26px;border-radius:13px}.project-card:hover{transform:translateY(-3px)}}
+@media(max-width:640px){body{background:var(--paper)}.project-section{padding-top:43px}.project-grid{gap:15px}.project-card,.project-card:nth-child(even),.project-card.aligned,.project-card.aligned:nth-child(even),.featured,.featured:nth-child(even){padding:24px 20px 26px;border-radius:13px}.project-badges{gap:6px;margin-bottom:16px}.project-badges>span{font-size:7px;padding:4px 8px}.project-card:hover{transform:translateY(-3px)}}
 @media(prefers-reduced-motion:reduce){.project-card{transition:none}.project-card:hover{transform:none}}
